@@ -1,0 +1,28 @@
+{% extends "basicapp/base.html" %}
+
+{% block body_block%}
+
+    <div class="p-5 text-center bg-body-tertiary rounded-3 container my-5 col-5">
+
+        {% if registered %}
+            <h1 class="text-body-emphasis">Thank you for registering </h1>
+
+        {% else %}
+            <h1 class="text-body-emphasis">Register Here!</h1>
+            <h3 class="fs-5"><code>Fill out the form</code> </h3>
+            <p></p>
+
+            <form enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                {{user_form.as_p}}
+                {{profile_form.as_p}}
+                <input class="container btn btn-primary" type="submit" name="" value="Register">
+            </form>
+
+        {% endif %}
+        
+    </div>
+
+
+{% endblock  %}
+

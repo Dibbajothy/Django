@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Forms</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <style>
+            .errorlist li {
+                color : #bd1313;
+                list-style-type: none;
+                margin : -2%;
+                margin-left : -6%;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+
+        <div class="container my-5 col-4">
+            <div class="p-5 text-center bg-body-tertiary rounded-3">
+                <h1 class="text-body-emphasis"> <strong> Sign Up </strong> </h1>
+                <p class="lead">
+                    <code>All the information is required.</code>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="container my-5 col-4">
+
+            <form method="POST" >
+
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" class="container btn btn-dark" value="Submit">
+
+            </form>
+
+        </div>
+
+
+    </body>
+</html>
